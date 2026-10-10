@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://googleapis.com" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+
+                // --- PART 1: MULTIPLE CHOICE ---
+                let feedback1 = document.querySelector('#feedback1');
+
+                // 1. Handle the correct button click
+                let correctButton = document.querySelector('.correct');
+                correctButton.addEventListener('click', function() {
+                    correctButton.style.backgroundColor = '#28a745'; // Green
+                    feedback1.innerHTML = 'Correct!';
+                    feedback1.style.color = '#28a745';
+                });
+
+                // 2. Handle all incorrect button clicks using a loop
+                let incorrectButtons = document.querySelectorAll('.incorrect');
+                for (let i = 0; i < incorrectButtons.length; i++) {
+                    incorrectButtons[i].addEventListener('click', function() {
+                        incorrectButtons[i].style.backgroundColor = '#dc3545'; // Red
+                        feedback1.innerHTML = 'Incorrect';
+                        feedback1.style.color = '#dc3545';
+                    });
+                }
+
+                // --- PART 2: FREE RESPONSE ---
+                let checkButton2 = document.querySelector('#check2');
+                let inputField2 = document.querySelector('#answer2');
+                let feedback2 = document.querySelector('#feedback2');
+
+                checkButton2.addEventListener('click', function() {
+                    let userAnswer = inputField2.value;
+
+                    // Trim out spaces and check answer case-insensitively
+                    if (userAnswer.trim().toLowerCase() === 'switzerland') {
+                        inputField2.style.backgroundColor = '#28a745'; // Green input field
+                        feedback2.innerHTML = 'Correct!';
+                        feedback2.style.color = '#28a745';
+                    } else {
+                        inputField2.style.backgroundColor = '#dc3545'; // Red input field
+                        feedback2.innerHTML = 'Incorrect';
+                        feedback2.style.color = '#dc3545';
+                    }
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What is approximate ratio of people to sheep in New Zealand</h3>
+
+                <button class="incorrect"><strong>6 people per 1 sheep</strong></button>
+                <button class="incorrect"><strong>3 people per 1 sheep</strong></button>
+                <button class="incorrect"><strong>1 people per 1 sheep</strong></button>
+                <button class="incorrect"><strong>1 people per 3 sheep</strong></button>
+                <button class="correct"><strong>1 people per 6 sheep</strong></button>
+
+                <p id="feedback1"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>In which country is it illegal to own only one guinea pig, as a lone guinea pig might get lonely?</h3>
+
+                <input type="text" id="answer2">
+                <input type="submit" id="check2">
+
+                <p id="feedback2"></p>
+            </div>
+        </div>
+    </body>
+</html>

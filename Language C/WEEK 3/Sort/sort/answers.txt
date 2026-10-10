@@ -1,0 +1,43 @@
+sort1 uses: Bubble sort
+
+How do you know?: As in a sorted number algoritm it takes near to 0 seconds but in a reversed and random list it takes signifantly more time O (N^2)
+
+sort2 uses:Merge sort
+
+How do you know?: It has the same time to sort all the algrithims in roughly the same time.
+
+sort3 uses: Selection sort
+
+How do you know?: Sort 3 uses selection sort this is beacause in seletion sort it takes the same time (or almost the same time) to sort a number set
+
+//Notes
+
+SORT 1
+
+Real - 0m4.157s
+User - 0m3.761s
+Sys - 0m0.080s
+
+SORT 2
+
+Real - 0m0.337s
+User - 0m0.018s
+Sys - 0m0.070s
+
+//Random
+
+real 0m0.001s
+user 0m0.000s
+sys 0m0.000s
+
+SORT 3
+//Reavered
+
+Real - 0m2.174s
+User - 0m1.760s
+Sys - 0m0.077s
+
+//Sorted
+Real - 0m2.328s
+User - 0m1.824s
+Sys - 0m0.070s
